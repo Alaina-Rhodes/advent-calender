@@ -94,20 +94,13 @@ pub mod day_one {
         }
         first * 10 + second
     }
-    pub fn test(num: u32, test_str: &str) -> u32 {
+    pub fn test(test_str: &str) -> (u32, u32) {
         let strings: Vec<&str> = test_str.split("\n").collect();
-        let mut sum = 0;
+        let mut results = (0, 0);
         for i in strings {
-            match &num {
-                1 => {
-                    sum += &number_from_string_first(i);
-                }
-                2 => {
-                    sum += &number_from_string_second(i);
-                }
-                _ => {}
-            }
+            results.0 += &number_from_string_first(i);
+            results.1 += &number_from_string_second(i);
         }
-        sum
+        results
     }
 }
