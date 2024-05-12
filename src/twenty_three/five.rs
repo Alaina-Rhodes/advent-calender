@@ -29,7 +29,7 @@ pub mod day_five {
         }
     }
 
-    pub fn smallest_seed(string: &str) -> i64 {
+    fn smallest_seed(string: &str) -> i64 {
         let mut seed_ranges: Vec<Vec<Range>> = Vec::new();
         let parts: Vec<&str> = string.split("\n\n").collect();
         let seeds: Vec<i64> = parts[0].split(": ").collect::<Vec<&str>>()[1].split(' ').flat_map(|x| x.parse::<i64>()).collect();
@@ -65,7 +65,7 @@ pub mod day_five {
         locations[0]
     }
 
-    pub fn smallest_seed_range(string: &str) -> i64 {
+    fn smallest_seed_range(string: &str) -> i64 {
         let mut seed_ranges: Vec<Range> = Vec::new();
         let parts: Vec<&str> = string.split("\n\n").collect();
         let seeds: Vec<i64> = parts[0].split(": ").collect::<Vec<&str>>()[1].split(' ').flat_map(|x| x.parse::<i64>()).collect();
